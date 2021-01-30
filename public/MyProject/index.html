@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          My Projects - Quang
+        
+    </title>
+
+    <link rel="canonical" href="https://decodecraft.com/MyProject/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<body ontouchstart="">
+	<!-- Created by Nguyen Nhat Quang -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('software_shutterstock_1290773869.jpg')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/undefined');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                            
+                              <a class="tag" href="/tags/#reactjs" title="reactjs">reactjs</a>
+                            
+                              <a class="tag" href="/tags/#all projects" title="all projects">all projects</a>
+                            
+                              <a class="tag" href="/tags/#python" title="python">python</a>
+                            
+                              <a class="tag" href="/tags/#php" title="php">php</a>
+                            
+                        </div>
+                        <h1>My Projects</h1>
+                        <h2 class="subheading">15 min read</h2>
+                        <span class="meta">
+                            Posted by Nhat Quang on
+                            2020-12-02
+                        </span>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Tech Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2><span id="in-this-post-i-am-going-to-summarize-all-the-projects-that-i-have-done-in-the-past-i-will-keep-updating-this">In this post, I am going to summarize all the projects that I have done in the past. I will keep updating this.</span></h2>
+<h3><span id="1-riceapps-nextstep-realtime-sms-textbot">1. Riceapps - NextStep - realtime SMS-textbot</span></h3>
+<ul>
+<li><strong>When</strong>: Aug 2020 - Now</li>
+<li><strong>Where</strong>: Rice PDI (Patient Discharge Initiative) Riceapps - A computer science club in Rice University that build digital solutions such as applications and softwares.</li>
+<li><strong>Additional Information</strong>: check out this <a href="https://medium.com/riceapps/riceapps-2020-2021-projects-a9b705391790" target="_blank" rel="noopener">post</a></li>
+<li><strong>Teammates</strong>: Shreya Nidadavolu, Quang Nguyen, Ryan Draper, Peter Jia, Willie Yao, Namita Davey, Graham Curtis, Janet Lu, Zhihan Lu</li>
+<li><strong>What is this project</strong>: A collaboration with PDI to build an SMS-based chatbot to help patients discharged from hospitals, providing them with help and relevant resources. We expect 10,000 users in Harris County once launched. During the Covid19 pandemic, our team is trying to create a product that helps the hospitals in ways we can.</li>
+</ul>
+<img src="/MyProject/riceapps.PNG">
+<ul>
+<li><strong>Where is it</strong>: Right now, we are still at the beginning phases. You can tried texting our Covid-19 service bot in Houston, Texas to see how it work. Try texting this number <strong>+12816265003</strong>. Careful, if you are not in the US, texting internationally will be charged.</li>
+</ul>
+<h3><span id="2-doctorally-healthcare-worker-supporting-platform">2. Doctorally - Healthcare Worker supporting platform</span></h3>
+<ul>
+<li><strong>When</strong>: Apr 2020</li>
+<li><strong>Where</strong>: For the Vietnam Angel Hackcovy Hackathon</li>
+<li><strong>Teammates</strong>: Hoang Lam, Hong Minh, Tuan Hoang, Hoang Minh</li>
+<li><strong>What is this project</strong>: To know more about Doctorally, you can check this post <a href="https://devpost.com/software/doctorally" target="_blank" rel="noopener">here</a>. I also explained how to create Doctorally platform in this <a href="https://decodecraft.com/Doctorally/">post</a><br>
+During the Covid19 pandemic, now more than ever, it’s important for health systems, health care organizations and volunteers to create and ensure an infrastructure and resources to support physicians, nurses, and care team members.</li>
+</ul>
+<img src="/MyProject/doctorally.PNG">
+<ul>
+<li><strong>Where is it</strong>: <a href="https://doctorally-test.herokuapp.com/" target="_blank" rel="noopener">https://doctorally-test.herokuapp.com/</a></li>
+<li><strong>Where is the code</strong>: <a href="https://github.com/MRSNOO/doctorally-test-deploy" target="_blank" rel="noopener">https://github.com/MRSNOO/doctorally-test-deploy</a></li>
+<li><strong>What we won</strong>: Qualified as finalists. Top 17 over 70 teams. Top 3 best medical track team</li>
+</ul>
+<h3><span id="3-chatapp-socketio">3. ChatApp - Socketio</span></h3>
+<ul>
+<li><strong>When</strong>: Oct 2020</li>
+<li><strong>Where</strong>: It is just a personal project I did. I usually do personal projects to sharpen my skills.</li>
+<li><strong>Teammates</strong>: I learnt how to do it from the documentation and tutorials online</li>
+<li><strong>What is this project</strong>: It is a chat app similar to Messenger (of course it is no where near Messenger). It has basic functions of creating rooms. People in the same room can chat with each other.</li>
+</ul>
+<img src="/MyProject/chatapp.PNG">
+<ul>
+<li><strong>Where is it</strong>: <a href="https://chat-app-socketio-test.herokuapp.com/" target="_blank" rel="noopener">https://chat-app-socketio-test.herokuapp.com/</a></li>
+<li><strong>Where is the code</strong>: <a href="https://github.com/MRSNOO/chat-app-socketio" target="_blank" rel="noopener">https://github.com/MRSNOO/chat-app-socketio</a></li>
+</ul>
+<h3><span id="4-cleen-website">4. CLEEN Website</span></h3>
+<ul>
+<li><strong>When</strong>: Jul 2018</li>
+<li><strong>Where</strong>: For CLEEN Organization</li>
+<li><strong>Teammates</strong>: I create everything from scratch. <strong>This is the first project I have ever created</strong></li>
+<li><strong>What is this project</strong>: Cleen Project is a project that raises funds to install water filters in villages through selling environmentally friendly bags. I am the cofounder of Cleen and I am the president of the project in 2019. I developed CLEEN Website using Python flask and JavaScript; update site continuously with latest environmental news. I also created an admin page to manage the posts and news. I also use my website as a way to promote my organization, spread the influence and call for sponsorship.</li>
+</ul>
+<img src="/MyProject/cleen.png">
+<ul>
+<li><strong>Where is it</strong>: <a href="http://cleen.herokuapp.com/" target="_blank" rel="noopener">http://cleen.herokuapp.com/</a></li>
+<li><strong>Where is the code</strong>: <a href="https://github.com/MRSNOO/CleenWeb" target="_blank" rel="noopener">https://github.com/MRSNOO/CleenWeb</a></li>
+</ul>
+<h3><span id="5-fusion-online-learning-platform">5. FUSION - Online Learning Platform</span></h3>
+<ul>
+<li><strong>When</strong>: Oct 2018 - Dec 2018</li>
+<li><strong>Where</strong>: For Conrad Spirit of Innovation Challenge</li>
+<li><strong>Teammates</strong>: Hoang Lam, Tuan Hoang</li>
+<li><strong>What is this project</strong>: When we were doing the Conrad Challenge in the Education Challenge, we came up with the idea of making a competitive online learning platform. In this platform, we prepared tests of all type of subjects such as Mathematics, English, Chemistry and Physics with the help of our teachers in class. We also have a elo-based ranking system to give student motivation.</li>
+</ul>
+<img src="/MyProject/fusion.PNG">
+<ul>
+<li><strong>Where is the code</strong>: <a href="https://github.com/MRSNOO/Fusion-Updated" target="_blank" rel="noopener">https://github.com/MRSNOO/Fusion-Updated</a></li>
+</ul>
+<h3><span id="6-movies-hub-for-marvel-fans">6. Movies Hub - for Marvel fans</span></h3>
+<ul>
+<li><strong>When</strong>: May 2019</li>
+<li><strong>Where</strong>: I love watching movies so I created a project so that everyone can get in and enjoy movies</li>
+<li><strong>Teammates</strong>: I create everything from scratch again</li>
+<li><strong>What is this project</strong>: As a long Marvel fan, I always love to have a website to watch free Movies whenever I like. So I created this movie hub for my friends to get in and enjoy the movies together.</li>
+</ul>
+<img src="/MyProject/movie.png">
+<ul>
+<li><strong>Where is it</strong>: <a href="https://movies-view.firebaseapp.com/" target="_blank" rel="noopener">https://movies-view.firebaseapp.com/</a></li>
+<li><strong>Where is the code</strong>: <a href="https://github.com/MRSNOO/CI-Final-Project-FilmWeb" target="_blank" rel="noopener">https://github.com/MRSNOO/CI-Final-Project-FilmWeb</a></li>
+<li><strong>What I won</strong>: first place in the Mindx Hackathon</li>
+</ul>
+<h3><span id="7-face-detection-tool">7. Face Detection Tool</span></h3>
+<ul>
+<li><strong>When</strong>: Aug 2019</li>
+<li><strong>Where</strong>: For the Mathematics and Science Summer Program (MaSSP)</li>
+<li><strong>Teammates</strong>: Anh Thu, Quang Huy</li>
+<li><strong>What is this project</strong>: In the summer program, our team tried to create an artificial intelligence product of facial detection and recognition. We synthesized the model github repositories found online to code the face detection function, using Python and Google collaboration. We also took pictures of all mentors and mentees in the camp to collect data for our model. Below is a picture of our group’s mentor after testing the model.</li>
+</ul>
+<img src="/MyProject/frame7.png">
+<ul>
+<li><strong>Where is the code</strong>: <a href="https://github.com/MRSNOO/Final-Project-MaSSP" target="_blank" rel="noopener">https://github.com/MRSNOO/Final-Project-MaSSP</a></li>
+</ul>
+<h3><span id></span></h3>
+<h3><span id="8-birthday-gift-for-my-girlfriend">8. Birthday Gift for my girlfriend</span></h3>
+<ul>
+<li><strong>When</strong>: Feb 9, 2020</li>
+<li><strong>Where</strong>: My girlfriend Minh Anh 18th birthday</li>
+<li><strong>What is this project</strong>: I wanted to give something special to my girlfriend to express my love. She loved this website.</li>
+</ul>
+<img src="/MyProject/minhanh.png">
+<h2><span id="this-is-the-end-for-now-i-will-updating-new-things-i-hoped-you-understand-some-projects-that-i-did-and-find-it-interesting">This is the end, for now. I will updating new things. I hoped you understand some projects that I did and find it interesting.</span></h2>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/TodoApp/" data-toggle="tooltip" data-placement="top" title="POST#6 CRUD Todo App with Firebase">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+
+                
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">In this post, I am going to summarize all the projects that I have done in the past. I will keep updating this.</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. Riceapps - NextStep - realtime SMS-textbot</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. Doctorally - Healthcare Worker supporting platform</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. ChatApp - Socketio</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. CLEEN Website</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5. FUSION - Online Learning Platform</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">6. Movies Hub - for Marvel fans</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">7. Face Detection Tool</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text"></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">8. Birthday Gift for my girlfriend</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">This is the end, for now. I will updating new things. I hoped you understand some projects that I did and find it interesting.</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                        
+                          <a class="tag" href="/tags/#reactjs" title="reactjs">reactjs</a>
+                        
+                          <a class="tag" href="/tags/#all projects" title="all projects">all projects</a>
+                        
+                          <a class="tag" href="/tags/#python" title="python">python</a>
+                        
+                          <a class="tag" href="/tags/#php" title="php">php</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+        //   icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://instagram.com/quang.sot.1412">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/quang.sot.1412">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Quang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Nhat Quang 2020 
+                    <br>
+                    Created by <a href="https://www.facebook.com/quang.sot.1412">Quang</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    from <a href="https://github.com/">MrSnoo</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=QUANG&repo=CodeBlog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://decodecraft.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<img src="https://decodecraft.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

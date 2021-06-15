@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://decodecraft.com/MessengerClone/</loc>
+        <lastmod>2021-02-01T18:30:15.962Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://decodecraft.com/TodoApp/</loc>
         <lastmod>2020-12-02T05:11:52.430Z</lastmod>
         <changefreq>weekly</changefreq>

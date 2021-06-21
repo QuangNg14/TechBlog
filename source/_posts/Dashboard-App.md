@@ -10,9 +10,9 @@ readtime: 30-min read
 
 It has been a while since I have written everything. I have some new projects since the winter and I will try to introduce to you guys some of the newest projects I have been working on since the spring semester. 
 
-Right after the finals are over, I have the time to create my first mobile application called **Dashboard: Track your training** (Link ["https://linktr.ee/quangnguyen14"](here)) and upload it to Appstore and Google Play. It was quite a challenging time and I wanted to share to you some basics on how to do it and some lessons I learned from deploying my application.
+Right after the finals are over, I have the time to create my first mobile application called **Dashboard: Track your training** (Link [Here](https://linktr.ee/quangnguyen14)) and upload it to Appstore and Google Play. It was quite a challenging time and I wanted to share to you some basics on how to do it and some lessons I learned from deploying my application.
 
-Here are the **big parts** that will be covered in this post. Notice that I will try not to go into too much details in this post because it will be super long. Instead, I will walk you through the tips, tricks and lessons I learned by a hard way when I was doing my app. If you want to take a look at the source code, feel free to see it ["https://github.com/QuangNg14/Dashboard-App"](here)
+Here are the **big parts** that will be covered in this post. Notice that I will try not to go into too much details in this post because it will be super long. Instead, I will walk you through the tips, tricks and lessons I learned by a hard way when I was doing my app. If you want to take a look at the source code, feel free to see it [here](https://github.com/QuangNg14/Dashboard-App)
 
 1. Introductions
 2. Frontend
@@ -89,7 +89,7 @@ Here is a look of the Login/Signup Screen:
 {% asset_img signup.png %}
 
 **Notice**
-These screens have basic functions to authenticate. I have already written a post about authenticating using JWT token ["http://localhost:4000/MessengerClone/"](here). However, we need to make sure that will use **SafeAreaView and ScrollView** to make it scrollable when the keyboard is opened (so that the keyboard doesnt cover the inputs)
+These screens have basic functions to authenticate. I have already written a post about authenticating using JWT token [Here](https://decodecraft.com/MessengerClone/). However, we need to make sure that will use **SafeAreaView and ScrollView** to make it scrollable when the keyboard is opened (so that the keyboard doesnt cover the inputs)
 
 ```javascript
         <SafeAreaView style={styles.container}>
@@ -335,7 +335,7 @@ What I do in the second useEffect is that I sort the post in the order that **ne
 
 ## Backend
 ### Setting up Express and some libraries
-In Express, we used some standard libraries such as express, bodyParser and mongoose (for handle MongoDB). To connect to MongoDB, I have already written a blog ["http://localhost:4000/Doctorally/"](here). You guys can check it out.
+In Express, we used some standard libraries such as express, bodyParser and mongoose (for handle MongoDB). To connect to MongoDB, I have already written a blog [Here](https://decodecraft.com/Doctorally/). You guys can check it out.
 
 ```javascript
 const express = require("express")
@@ -486,7 +486,7 @@ const postSchema = new mongoose.Schema({
 This is basically how we create the **postSchema**.
 
 ### Host server on Google App Engine
-In order to run your server on all machines, we need to host our server somewhere but I chose **Google App Engine**. You can use whatever service you like. Here is the quick recap of the steps that is in ["https://cloud.google.com/appengine/docs/standard/nodejs/quickstart"](this official tutorial) 
+In order to run your server on all machines, we need to host our server somewhere but I chose **Google App Engine**. You can use whatever service you like. Here is the quick recap of the steps that is in [This official tutorial](https://cloud.google.com/appengine/docs/standard/nodejs/quickstart) 
 
 1. Create an app on Google Cloud Console
 {% asset_img newapp.png %}
@@ -575,10 +575,10 @@ In the string value, you must provide a **detailed** description of how you want
 
 Usually when builing your app, you would have already tested with some kind of simulators. To test an IOS App, it would be best to use **Xcode Simulator**. You can open Xcode and open the **simulator** from choose from navigation bar Window -> Devices and Simulator. Remember that you can choose any type of Iphone you want to simulate. You will need multiple Iphones for taking the screenshots later.
 
-Another way to more accurately test it with Iphone is using the Custom Expo Go. You should consider following the instructions ["https://docs.expo.io/guides/adhoc-builds/"](here)
+Another way to more accurately test it with Iphone is using the Custom Expo Go. You should consider following the instructions [Here](https://docs.expo.io/guides/adhoc-builds/)
 
 #### Build the app for IOS using the archive
-You need to build the iOS bundle that actually packages the code of your app. This is then deployed somewhere on the Expo servers. In order to do this run the code below. Detailed Instructions are at ["https://docs.expo.io/distribution/building-standalone-apps/"](here)
+You need to build the iOS bundle that actually packages the code of your app. This is then deployed somewhere on the Expo servers. In order to do this run the code below. Detailed Instructions are at [here](https://docs.expo.io/distribution/building-standalone-apps/)
 
 ```javascript
     expo build:ios -t archive
@@ -610,7 +610,7 @@ Preparing **screenshots** of your Application in 6.5 inch phones (1242 × 2688px
 
 #### Test your app on TestFlight 
 
-Download the app Transporter from App Store to your Mac. Link ["https://apps.apple.com/us/app/transporter/id1450874784?mt=12"](here)
+Download the app Transporter from App Store to your Mac. Link [Here](https://apps.apple.com/us/app/transporter/id1450874784?mt=12)
 
 Remember the **.ipa** file that I told you to save. This **.ipa** file is really important. You can now drop the .ipa file into your transporter app and it will upload automatically to TestFlight on App Store Connect. **REMEMBER**, you will need a different build version for each upload. You **CANNOT** have 2 builds that have the same versions and the same build number.
 
@@ -623,7 +623,7 @@ You can see the details in these 2 pictures below:
 
 #### Submit your app for review and wait for approval
 
-When you have finished all the steps above, your app is ready to submit for review. It will take from 24-48 hours to complete. **Notice** that Apple will extensively check and test out your app. Therefore, you should make sure that your app follows these rules so that it will not be rejected by Apple. The link is [here]("https://developer.apple.com/app-store/review/")
+When you have finished all the steps above, your app is ready to submit for review. It will take from 24-48 hours to complete. **Notice** that Apple will extensively check and test out your app. Therefore, you should make sure that your app follows these rules so that it will not be rejected by Apple. The link is [here](https://developer.apple.com/app-store/review/)
 
 ### Deploying an Expo App to Google Play Store
 
@@ -646,7 +646,7 @@ The app.json file is quite similar to ios. You will control your version like th
     }
 ```
 
-**android file**. This is the most important file for Android App. In here, you will need to add the **PERMISSIONS YOU ASK FROM THE USERS** in the **permissions** key. Since my app is using background location, foreground location, media library and camera, all of these **configurations** are required. More info on setting up the file can be found [here]("https://docs.expo.io/versions/v41.0.0/config/app/#apikey-2")
+**android file**. This is the most important file for Android App. In here, you will need to add the **PERMISSIONS YOU ASK FROM THE USERS** in the **permissions** key. Since my app is using background location, foreground location, media library and camera, all of these **configurations** are required. More info on setting up the file can be found [here](https://docs.expo.io/versions/v41.0.0/config/app/#apikey-2)
 
 ```json
     "permissions": [
@@ -660,7 +660,7 @@ The app.json file is quite similar to ios. You will control your version like th
     ],
 ```
 #### Testing your app on Android Emulator
-You should download the Android Studio (link: "https://developer.android.com/studio") and use the **Android Emulator** in the AVD Manager. If you are using a Mac M1, you should consider using the Preview version 3 of the Android Emulator [here]("https://github.com/741g/android-emulator-m1-preview/releases")
+You should download the Android Studio (link: "https://developer.android.com/studio") and use the **Android Emulator** in the AVD Manager. If you are using a Mac M1, you should consider using the Preview version 3 of the Android Emulator [here](https://github.com/741g/android-emulator-m1-preview/releases)
 
 You can also use an Android Phone and Download **Expo Go**. Then you can test your app like you did in the building stage
 

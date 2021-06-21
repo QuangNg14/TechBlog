@@ -18,7 +18,7 @@ readtime:
 
 {% asset_img 3.record.png %}
 
-- **Where is it**: It is now available on both App Store and Google Play Store. You guys can check it out [here]("https://linktr.ee/quangnguyen14")
+- **Where is it**: It is now available on both App Store and Google Play Store. You guys can check it out [here](https://linktr.ee/quangnguyen14)
 
 ### 2. Messaging Platform 
 - **When**: Dec 2020

@@ -1,7 +1,7 @@
 ---
 title: Post#2 How to create a blog using M.E.R.N Stack
 catalog: true
-# date: 2020-03-27 18:41:59
+date: 2020-03-27 18:41:59
 subtitle: 25 min read
 header-img: "mernpic.jpg"
 tags: [javascript, reactjs, nodejs]

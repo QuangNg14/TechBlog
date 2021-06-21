@@ -1,5 +1,5 @@
 ---
-title: POST#6 CRUD Todo App with Firebase
+title: Post#6 CRUD Todo App with Firebase
 catalog: true
 date: 2020-12-01 00:42:49
 subtitle:

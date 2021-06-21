@@ -1,7 +1,7 @@
 ---
 title: My Projects
 catalog: true
-date: 2020-12-02 19:21:45
+date: 2021-22-06 19:21:45
 subtitle: 15 min read
 header-img: "software_shutterstock_1290773869.jpg"
 tags: [all projects, reactjs, javascript, python, php]
@@ -10,7 +10,39 @@ readtime:
 
 ## In this post, I am going to summarize all the projects that I have done in the past. I will keep updating this. 
 
-### 1. Riceapps - NextStep - realtime SMS-textbot
+### 1. Dashboard: Track your training - Mobile Application 
+- **When**: May 2021 - now
+- **Where**: **Dashboard: Track your training** is available on App Store and Google Play Store. **Go download it** !
+- **Additional Information**: check out this [Post](https://decodecraft.com/Dashboard-App/)
+- **What is this project**: DASH across your favorite route, pin the location of new eateries, and share your favorite running selfies on the BOARD! Taking inspiration from this simple wordplay, DASHBOARD emerges: a free sports management app with a friendly UI design that accurately records your training routes while helping you pin locations at ease and share your achievements with the DASHBOARD network. Whether you are training as part of a routine or practicing for a race, this all-in-one app is the perfect platform for tracking journeys and connecting with others.
+
+{% asset_img 3.record.png %}
+
+- **Where is it**: It is now available on both App Store and Google Play Store. You guys can check it out [here]("https://linktr.ee/quangnguyen14")
+
+### 2. Messaging Platform 
+- **When**: Dec 2020
+- **Where**: https://todoapp-aaff8.web.app.
+- **Additional Information**: check out this [Post](https://decodecraft.com/MessengerClone/)
+- **What is this project**: This is a real-time messaging platform based on the functions of Facebook Messenger (or a Messenger Clone). You can make friend requests and chat with each other right on the web. You can also change avatars, create group conversations, upload images.
+
+{% asset_img messenger.png %}
+
+- **Where is it**: You can look at the source code of the project here [Github]("https://github.com/QuangNg14/Messenger-Clone-New")
+
+### 3. Link - Rice Datathon 
+- **When**: Feb 2021
+- **Where**: 3rd Rice Datathon 2021.
+- **Additional Information**: check out this [Post](https://devpost.com/software/link-ot1d9k?ref_content=contribution-prompt&ref_feature=engagement&ref_medium=email&utm_campaign=contribution-prompt&utm_content=contribution_reminder&utm_medium=email&utm_source=transactional#app-team)
+- **Teammates**: Marc Shen, Christine Lee, Thomas Yeum
+- **What is this project**: Given the wealth of transaction data provided by Bill.com, we sought to identify vendor-to-vendor, agency-to-agency, and agency-to-vendor relationships that could be used to identify similar agencies and vendors. Specifically, our goal was to identify a quantitative method of measuring similarity among vendors and agencies in order to make custom-tailored recommendations.
+
+{% asset_img link.png %}
+
+- **Where is it**: We eventually won **First** Place in the Bill.com Track and received really cool prizes from the company. You guys can check out the [Github]("https://github.com/QuangNg14/Datathon")
+
+
+### 4. Riceapps - NextStep - realtime SMS-textbot
 - **When**: Aug 2020 - Now
 - **Where**: Rice PDI (Patient Discharge Initiative) Riceapps - A computer science club in Rice University that build digital solutions such as applications and softwares.
 - **Additional Information**: check out this [post](https://medium.com/riceapps/riceapps-2020-2021-projects-a9b705391790)
@@ -19,10 +51,10 @@ readtime:
 
 {% asset_img riceapps.PNG %}
 
-- **Where is it**: Right now, we are still at the beginning phases. You can tried texting our Covid-19 service bot in Houston, Texas to see how it work. Try texting this number **+12816265003**. Careful, if you are not in the US, texting internationally will be charged.
+- **Where is it**: Right now, our product is being used by Texas Children Hospital serving more than 5000 users.
 
 
-### 2. Doctorally - Healthcare Worker supporting platform 
+### 5. Doctorally - Healthcare Worker supporting platform 
 - **When**: Apr 2020
 - **Where**: For the Vietnam Angel Hackcovy Hackathon 
 - **Teammates**: Hoang Lam, Hong Minh, Tuan Hoang, Hoang Minh
@@ -35,7 +67,7 @@ readtime:
 - **Where is the code**: https://github.com/MRSNOO/doctorally-test-deploy
 - **What we won**: Qualified as finalists. Top 17 over 70 teams. Top 3 best medical track team
 
-### 3. ChatApp - Socketio
+### 6. ChatApp - Socketio
 - **When**: Oct 2020
 - **Where**: It is just a personal project I did. I usually do personal projects to sharpen my skills.
 - **Teammates**: I learnt how to do it from the documentation and tutorials online
@@ -46,7 +78,7 @@ readtime:
 - **Where is it**: https://chat-app-socketio-test.herokuapp.com/
 - **Where is the code**: https://github.com/MRSNOO/chat-app-socketio
 
-### 4. CLEEN Website
+### 7. CLEEN Website
 - **When**: Jul 2018
 - **Where**: For CLEEN Organization 
 - **Teammates**: I create everything from scratch. **This is the first project I have ever created**
@@ -57,7 +89,7 @@ readtime:
 - **Where is it**: http://cleen.herokuapp.com/
 - **Where is the code**: https://github.com/MRSNOO/CleenWeb 
 
-### 5. FUSION - Online Learning Platform
+### 8. FUSION - Online Learning Platform
 - **When**: Oct 2018 - Dec 2018
 - **Where**: For Conrad Spirit of Innovation Challenge  
 - **Teammates**: Hoang Lam, Tuan Hoang
@@ -68,7 +100,7 @@ readtime:
 - **Where is the code**: https://github.com/MRSNOO/Fusion-Updated
 
 
-### 6. Movies Hub - for Marvel fans
+### 9. Movies Hub - for Marvel fans
 - **When**: May 2019
 - **Where**: I love watching movies so I created a project so that everyone can get in and enjoy movies 
 - **Teammates**: I create everything from scratch again 
@@ -80,7 +112,7 @@ readtime:
 - **Where is the code**: https://github.com/MRSNOO/CI-Final-Project-FilmWeb 
 - **What I won**: first place in the Mindx Hackathon
 
-### 7. Face Detection Tool
+### 10. Face Detection Tool
 - **When**: Aug 2019
 - **Where**: For the Mathematics and Science Summer Program (MaSSP) 
 - **Teammates**: Anh Thu, Quang Huy
@@ -91,7 +123,7 @@ readtime:
 - **Where is the code**: https://github.com/MRSNOO/Final-Project-MaSSP
 ###
 
-### 8. Birthday Gift for my girlfriend
+### 11. Birthday Gift for my girlfriend
 - **When**: Feb 9, 2020
 - **Where**: My girlfriend Minh Anh 18th birthday
 - **What is this project**: I wanted to give something special to my girlfriend to express my love. She loved this website. 

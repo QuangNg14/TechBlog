@@ -1,7 +1,7 @@
 ---
 title:  Post#1 How I started coding ... 
 catalog: true
-# date: 2020-03-26 22:19:19
+date: 2020-03-26 22:19:19
 subtitle: 4 min read
 header-img: "demo.jpg"
 tags: intro 

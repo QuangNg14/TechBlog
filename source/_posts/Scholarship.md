@@ -1,7 +1,7 @@
 ---
 title: Post#3 How I got a full scholarship at Rice Engineering Computer Science
 catalog: true
-# date: 2020-04-09 00:57:37
+date: 2020-04-09 00:57:37
 subtitle: 20 min read
 header-img: test1.jpg
 tags: [scholarships, CS]

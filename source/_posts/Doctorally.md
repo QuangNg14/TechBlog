@@ -1,7 +1,7 @@
 ---
 title: Post#4 Creating Doctorally - Online Supporting Platform
 catalog: true
-# date: 2020-10-18 08:53:06
+date: 2020-10-18 08:53:06
 subtitle: 20-min read
 header-img: "Hospital.png"
 tags: [javascript, reactjs, nodejs, api]

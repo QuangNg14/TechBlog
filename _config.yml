@@ -178,7 +178,7 @@ sitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/MRSNOO/CodeBlog
+  repository: https://github.com/MRSNOO/QuangNg14
   branch: master
   # type: heroku
   # repository: https://git.heroku.com/decodecraft.git

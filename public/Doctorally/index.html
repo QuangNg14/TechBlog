@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Post#4 Creating Doctorally - Online Supporting Platform - Quang
+        
+    </title>
+
+    <link rel="canonical" href="https://decodecraft.com/Doctorally/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<body ontouchstart="">
+	<!-- Created by Nguyen Nhat Quang -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('Hospital.png')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/undefined');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                            
+                              <a class="tag" href="/tags/#reactjs" title="reactjs">reactjs</a>
+                            
+                              <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
+                            
+                              <a class="tag" href="/tags/#api" title="api">api</a>
+                            
+                        </div>
+                        <h1>Post#4 Creating Doctorally - Online Supporting Platform</h1>
+                        <h2 class="subheading">20-min read</h2>
+                        <span class="meta">
+                            Posted by Quang Nguyen on
+                            2020-10-18
+                        </span>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Quang Nguyen</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2><span id="it-has-been-a-long-time-since-i-last-wrote-on-my-blog-so-i-want-to-add-some-usefel-posts-in-my-break-time">It has been a long time since I last wrote on my blog. So I want to add some usefel posts in my break time</span></h2>
+<p>During the Covid-19 pandemic, me and my friends have created a online platform to connect <strong>healthcare workers</strong> to <strong>volunteers</strong> with their basic needs called Doctorally. Here I am going to explain quickly how we did it.</p>
+<p>Again this is a <strong>MERN</strong> stack. I have explained it here in <a href="https://decodecraft.com/CreateBlog/">this post</a>. I am going to divide the post into 2 parts the <strong>frontend</strong> and the <strong>backend</strong></p>
+<h3><span id="frontend">FRONTEND</span></h3>
+<p>For the frontend the main tools we used was:</p>
+<ol>
+<li>Material UI Framework. You can find the details <a href="https://material-ui.com/" target="_blank" rel="noopener">here</a></li>
+<li>React-router-dom and react-router.</li>
+<li>React hooks: useContext and useEffect</li>
+<li>Authentication</li>
+<li>Custom authentication hook.</li>
+<li>API calling from Mapbox, Openstreetmap and custom API.</li>
+</ol>
+<h3><span id="1-material-ui-framework">1. Material UI Framework</span></h3>
+<p>This framework gives us a very beautiful layout. We can handle or store the data we get from the server by using <strong>Containers</strong> or <strong>Tables</strong> of Material UI.</p>
+<p>We can get all the layouts we want Button, Box, Container, Grid. For example this is a <strong>Table</strong> the that handles that data from an API.</p>
+
+<p>This is a basic set up of the Tables that we are using to list out all the data:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;TableContainer className=&#123;classes.container&#125;&gt;</span><br><span class="line">  &lt;Table stickyHeader aria-label=<span class="string">"sticky table"</span>&gt;</span><br><span class="line">    &lt;TableHead&gt;</span><br><span class="line">      &lt;TableRow&gt;</span><br><span class="line">        &lt;StyledTableCell align=<span class="string">'center'</span>&gt;</span><br><span class="line">          &lt;div</span><br><span class="line">            style=&#123;&#123;</span><br><span class="line">            fontWeight: <span class="string">'bold'</span>,</span><br><span class="line">            fontFamily: <span class="string">'Faustina'</span></span><br><span class="line">            &#125;&#125;&gt;&#123;getLongLineText(locale.lang, <span class="string">"covid19_data"</span>, <span class="string">"heads"</span>, <span class="string">"country"</span>)&#125;</span><br><span class="line">          &lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Remember to <strong>import</strong> all the necessaries depencies the most commonly used in Material UI is ‘@material-ui/core’.</p>
+<h3><span id="2-react-router-dom-and-react-router">2. React-router-dom and react-router</span></h3>
+<p>Since our website is a single page website, using react router can help us quickly change between the pages and pass data to different places through <strong>props</strong> or <strong>query</strong> or <strong>params</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route exact path=<span class="string">"/"</span> component=&#123;HomePage&#125; /&gt;</span><br><span class="line">&lt;Route exact path=<span class="string">"/about"</span> component=&#123;About&#125; /&gt;</span><br><span class="line">&lt;Route exact path=<span class="string">"/volunteer"</span> component=&#123;Volunteer&#125; /&gt;</span><br><span class="line">&lt;Route exact path=<span class="string">"/volunteer/signup"</span> component=&#123;VolunteerSignUp&#125; /&gt;</span><br><span class="line">&lt;Route exact path=<span class="string">"/volunteer/signup/success"</span> component=&#123;SuccessVolunteer&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>The <strong>exact path</strong> will be the link to our pages. For example, if our domain is (this)[<a href="https://doctorally-test.herokuapp.com/" target="_blank" rel="noopener">https://doctorally-test.herokuapp.com/</a>]. Then if we access <a href="https://doctorally-test.herokuapp.com/about" target="_blank" rel="noopener">https://doctorally-test.herokuapp.com/about</a>, we will get the About page.</p>
+<p>The <strong>Component</strong> we passed in will be rendered if we access that path. So the About Component will be rendered if the About page is accessed.</p>
+<p>When we want to pass extra information or access a page that is <strong>unique</strong> to each person (that could be a page that we can only access after logged in), we will pass the <strong>params</strong> “/:id” into the path.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route exact path=<span class="string">"/requests/:id"</span> component=&#123;RequestResponse&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>This means that after the doctors create a request in the <strong>RequestResponse</strong> component, there will be a unique id generated. We can only access this request by having that id.</p>
+<p>Remember to wrap the App in the main index.js file in BrowserRouter for the Router to work</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;BrowserRouter&gt;</span><br><span class="line">  &lt;App /&gt;</span><br><span class="line">&lt;<span class="regexp">/BrowserRouter&gt;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="3-react-hooks-usecontext-useeffect-usehistory-useparams">3. React hooks: useContext, useEffect, useHistory, useParams</span></h3>
+<p>Beside useState which will obviously be used a lot, we used some additional hooks as listed in the title.</p>
+<h4><span id="31-usecontext">3.1 useContext</span></h4>
+<p>This is a very efficient way to maintain a website in 2 languages and quickly switch between each other. Our website has 2 languages Vietnamese and English. We will store all the texts in the website by variables</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ENG = &#123;</span><br><span class="line">  header: &#123;</span><br><span class="line">    about: <span class="string">"About"</span>,</span><br><span class="line">    volunteer: <span class="string">"Volunteer"</span>,</span><br><span class="line">    request_help: <span class="string">"Request Help"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  homepage: &#123;</span><br><span class="line">    volunteer: &#123;</span><br><span class="line">      title: <span class="string">"Volunteer"</span>,</span><br><span class="line">      description_strong: <span class="string">"Small actions spread love. "</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>And we store all the Vietnamese versions of the words also in variables</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> VIE = &#123;</span><br><span class="line">  header: &#123;</span><br><span class="line">    about: <span class="string">"Về chúng mình"</span>,</span><br><span class="line">    volunteer: <span class="string">"Tình nguyện"</span>,</span><br><span class="line">    request_help: <span class="string">"Yêu cầu giúp đỡ"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  homepage: &#123;</span><br><span class="line">    volunteer: &#123;</span><br><span class="line">      title: <span class="string">"Tình nguyện"</span>,</span><br><span class="line">      description_strong: <span class="string">"Hành động nhỏ loan tỏa yêu thương. "</span>,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>In order to switch between the 2, we create a context and called it localeContext.<br>
+So this variable will have 2 values English or Vietnamese, if we want to change all the words to another language we can just change this variable.</p>
+<p>This will be the function that sets up the localeContext. The getText function we browse in all the texts we store upper in the objects <strong>ENG</strong> and <strong>VIE</strong> and get the appropriate words.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> localeContext = React.createContext(&#123; <span class="attr">lang</span>: <span class="string">"ENG"</span>, <span class="attr">setLang</span>: <span class="function"><span class="params">()</span> =&gt;</span> &#123; &#125; &#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getText = <span class="function">(<span class="params">loc, key, lang</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (lang === <span class="string">"VIE"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> VIE[loc][key];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ENG[loc][key];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>This is one application in the website where we get the text and display it inside a button</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> locale = useContext(localeContext);</span><br><span class="line"> &lt;Button&gt;</span><br><span class="line">  &#123;getText(<span class="string">"header"</span>, <span class="string">"supply_stores"</span>, locale.lang)&#125;</span><br><span class="line">&lt;<span class="regexp">/Button&gt;</span></span><br></pre></td></tr></table></figure>
+<h4><span id="32-useeffect">3.2 useEffect</span></h4>
+<p>We use this every time we want to load the data automatically from the server whenever we get into the page.</p>
+<p>Assume that we want to perform GET method from the API “/helpRequest”. This will get all the helprequest data from the Mongodb.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [requestData, setRequestData] = useState([]);</span><br><span class="line"><span class="keyword">const</span> [invalidate, setInvalidate] = useState(<span class="literal">true</span>);</span><br><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (invalidate) &#123;</span><br><span class="line">    axios.get(<span class="string">"/helpRequest"</span>)</span><br><span class="line">      .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// setRequestData(res);</span></span><br><span class="line">        <span class="built_in">console</span>.log(res)</span><br><span class="line">        setInvalidate(<span class="literal">false</span>);</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, [invalidate]);</span><br></pre></td></tr></table></figure>
+<p>This function will be run everytime the state invalidate is changed. Invalidate is a state to cleanup the function, meaning that this will not be run continuously while we are still in the page but only run when we reload or switch to the page.<br>
+After the we perform the <strong>GET</strong> request, we will store the <strong>res</strong> data into the requestData state and set the invalidate to false so that the function will not be called again.</p>
+<h4><span id="33-usehistory-useparams">3.3 useHistory, useParams</span></h4>
+<p>useHistory is a React hook that helps us change the page really efficiently. Remember before we have our react-router set up. Here we can imagine the history is our website link and if we are at the main page and want to navigate to about page we can simply do</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> history = useHistory();</span><br><span class="line">history.push(<span class="string">"/about"</span>)</span><br></pre></td></tr></table></figure>
+<p>So similar question to what we have before in react-router, if we want to switch to a page that is unique to each person, what will we do?</p>
+<p>Here we assume that we have the id of the page that we want to switch to is <strong>id</strong>. We can push it into the history through params</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> history = useHistory();</span><br><span class="line"><span class="keyword">const</span> handleBoxClick = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  history.push(<span class="string">`requests/<span class="subst">$&#123;id&#125;</span>`</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Now if we switch to the ${domain}/requests/${id} page, we can get the id that we just passed through the params by using the hook useParams</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; id &#125; = useParams();</span><br></pre></td></tr></table></figure>
+<h3><span id="4-authentication">4. Authentication</span></h3>
+<p>This is quite a complicate process that involves that backend as well. First in the frontend we will set up our submit form using Formik (a more efficient form).</p>
+<p>This is the basic form of the username input</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;Form onSubmit=&#123;formik.handleSubmit&#125;&gt;</span><br><span class="line">  &lt;Form.Group&gt;</span><br><span class="line">    &lt;Form.Label className=<span class="string">"code"</span>&gt;Username&lt;<span class="regexp">/Form.Label&gt;</span></span><br><span class="line"><span class="regexp">    &lt;Form.Control</span></span><br><span class="line"><span class="regexp">      type="text"</span></span><br><span class="line"><span class="regexp">      name="username"</span></span><br><span class="line"><span class="regexp">      value=&#123;formik.values.username&#125;</span></span><br><span class="line"><span class="regexp">      onChange=&#123;formik.handleChange&#125;</span></span><br><span class="line"><span class="regexp">      isInvalid=&#123;formik.errors.username&#125;</span></span><br><span class="line"><span class="regexp">    /</span>&gt;</span><br><span class="line">    &lt;Form.Control.Feedback type=<span class="string">"invalid"</span>&gt;</span><br><span class="line">      &#123;formik.errors.username&#125;</span><br><span class="line">    &lt;<span class="regexp">/Form.Control.Feedback&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>Form.Group&gt;</span><br><span class="line">&lt;<span class="regexp">/Form&gt;</span></span><br></pre></td></tr></table></figure>
+<p>This big Form will have an <strong>handleSubmit</strong> function that is embedded in the Formik to send all the data</p>
+<p>After submitting the form, we will call to the login api and after that we will receive a new user with a newly generated JWT token. We will the add this token to the localStorage in order to use the Remember Me function. When we log out, we will delete this jwt token from the localStorage.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> formik = useFormik(&#123;</span><br><span class="line">  ...</span><br><span class="line">onSubmit: <span class="function">(<span class="params">values</span>) =&gt;</span> &#123;</span><br><span class="line">      fetchLogin(values.username, values.password, values.role)</span><br><span class="line">        .then(<span class="function">(<span class="params">authUser</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">if</span> (values.rememberMe) &#123;</span><br><span class="line">            localStorage.setItem(<span class="string">"jwt"</span>, authUser.token);</span><br><span class="line">          &#125;</span><br><span class="line">          setAuthUser(authUser);</span><br><span class="line">          history.push(<span class="string">"/"</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">        .catch(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          setFailureModalVisible(<span class="literal">true</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>We will do a similar thing to the Register Method</p>
+<h3><span id="5-custom-authentication-hook">5. Custom authentication hook.</span></h3>
+<p>This is a very useful hook to use when we want to only allow access to a page if the person has authenticated (logged in).</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> withAuth = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span> <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; authUser, setAuthUser &#125; = useContext(authCtx);</span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!authUser) &#123;</span><br><span class="line">      <span class="keyword">const</span> jwt = localStorage.getItem(<span class="string">'jwt'</span>);</span><br><span class="line">      <span class="keyword">if</span> (jwt) &#123;</span><br><span class="line">        fetchProfile(jwt).then(<span class="function">(<span class="params">user</span>) =&gt;</span> setAuthUser(user));</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, [authUser, fetchProfile, setAuthUser]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (profileApi.loading) &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;Loading /&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (authUser !== <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;WrappedComponent &#123;...props&#125; /&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &lt;Auth &#123;...props&#125; /&gt;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>We will store the data of the authenticated user after logging in to a authUser context so that we can access this data everywhere in our app. We will get the jwt in the localStorage and find out the appropriate current user. Then we will pass all the props of the (WrappedComponent) into the withAuth component. So for example if we want that user can only access OfferHelp if they have logged in then we will wrap it up as the following:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withAuth(OfferHelp);</span><br></pre></td></tr></table></figure>
+<h3><span id="6-api-calling-from-mapbox-openstreetmap-and-custom-api">6. API calling from Mapbox, Openstreetmap and custom API.</span></h3>
+<p>In our app, we use Openstreemap API to get the nearby stores from the healthcare worker’s locations. So here is what we will do. We will get the input location of the healthcare workers. Then we will use Openstreetmap to convert it into longitude and latitude. After that, we will implement that longitude and latitude into the Mapbox API to get all the shops that are nearby the healthcare’s workers locations (I can use Google Map API for this but it is quite costly)</p>
+<p>This is we get the longitude and latitude of the location</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fetchNearbyStoreDataLocation = <span class="keyword">async</span> (location) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(<span class="string">`https://nominatim.openstreetmap.org/search?q=<span class="subst">$&#123;location&#125;</span>&amp;format=json&amp;polygon_geojson=1&amp;addressdetails=1`</span>)</span><br><span class="line">  <span class="keyword">const</span> resJson = <span class="keyword">await</span> response.json()</span><br><span class="line">  <span class="keyword">return</span> resJson</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Then we will store the data we get from the <strong>fetchNearbyStoreDataLocation</strong> into a state called <strong>locationCordinate</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [locationCordinate, setLocationCordinate] = useState(&#123;</span><br><span class="line">  lat: <span class="number">0</span>,</span><br><span class="line">  lon: <span class="number">0</span></span><br><span class="line">&#125;)</span><br><span class="line"> fetchNearbyStoreDataLocation(newQuery)</span><br><span class="line">    .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">      setLocationCordinate(&#123;</span><br><span class="line">        lat: res[<span class="number">0</span>].lat,</span><br><span class="line">        lon: res[<span class="number">0</span>].lon</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
+<p>After that, we will get the nearby stores from the location coordinates data using mapbox</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fetchNearbyStoreData = <span class="keyword">async</span> (locationCordinate) =&gt; &#123;</span><br><span class="line">  <span class="keyword">var</span> tileset = <span class="string">'mapbox.mapbox-streets-v8'</span></span><br><span class="line">  <span class="keyword">var</span> radius = <span class="number">2000</span>; <span class="comment">//meters</span></span><br><span class="line">  <span class="keyword">var</span> limit = <span class="number">30</span>; <span class="comment">// The maximum amount of results to return</span></span><br><span class="line">  <span class="keyword">var</span> layers = <span class="string">'poi_label'</span></span><br><span class="line">  <span class="keyword">var</span> query = <span class="string">'https://api.mapbox.com/v4/'</span> + tileset + <span class="string">'/tilequery/'</span> + locationCordinate.lon + <span class="string">','</span> + locationCordinate.lat + <span class="string">'.json?radius='</span> + radius + <span class="string">'&amp;limit='</span> + limit + <span class="string">'&amp;layers='</span> + layers + <span class="string">'&amp;access_token='</span> + mapboxgl.accessToken</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(query)</span><br><span class="line">  <span class="keyword">const</span> resJson = <span class="keyword">await</span> response.json()</span><br><span class="line">  <span class="keyword">return</span> resJson</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="backend">BACKEND</span></h3>
+<p>The backend is mostly used to handle the API calls that we make in the frontend so we will have 3 main <strong>API calls</strong></p>
+<ol>
+<li>Authentication</li>
+<li>HelpRequests</li>
+<li>Volunteer</li>
+</ol>
+<p>We use these libraries and dependencies: express, mongoose, cors, body-parser, path, jsonwebtoken(jwt). For the database, we will use the online cloud Mongodb in order to deploy it later.</p>
+<h4><span id="1-authentication">1. Authentication</span></h4>
+<p>First we must create the API for both the login and the register request</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">'/register'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; username, password, role &#125; = req.body;</span><br><span class="line">  register(username, password, role)</span><br><span class="line">    .then(<span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">      res.json(&#123; <span class="attr">success</span>: <span class="literal">true</span> &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">switch</span> (err.message) &#123;</span><br><span class="line">        <span class="keyword">case</span> ERROR.USERNAME_EXISTED:</span><br><span class="line">          res.status(<span class="number">409</span>).json(&#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">err</span>: ERROR.USERNAME_EXISTED &#125;);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">          res.status(<span class="number">500</span>).json(&#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">err</span>: ERROR.INTERNAL_ERROR &#125;);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">router.post(<span class="string">'/login'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; username, password, role &#125; = req.body;</span><br><span class="line">  login(username, password, role)</span><br><span class="line">    .then(<span class="function">(<span class="params">user</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> token = generateJWT(user);</span><br><span class="line">      res.json(&#123;</span><br><span class="line">        user: user,</span><br><span class="line">        token: token,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">      res.status(<span class="number">401</span>).json(&#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">err</span>: err.message &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>We will receive the req.body directly from the form that we create in the Frontend by calling the API “/login” and “/register”. In here we can see that there are 2 functions login and register.</p>
+<p>For example for the register function, we will</p>
+<ol>
+<li>check if the user has already existed</li>
+<li>create a newUser with 2 fields username and role(doctor or volunteer)</li>
+<li>generate an encripted password from the password user entered</li>
+<li>save the user to the database</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> register = <span class="keyword">async</span> (username, password, role) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> user = <span class="keyword">await</span> User.findOne(&#123; username &#125;);</span><br><span class="line">  <span class="keyword">if</span> (user) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(ERROR.USERNAME_EXISTED);</span><br><span class="line">  <span class="keyword">const</span> newUser = <span class="keyword">new</span> User(&#123;</span><br><span class="line">    username, role</span><br><span class="line">  &#125;);</span><br><span class="line">  newUser.generatePassword(password);</span><br><span class="line">  <span class="keyword">return</span> newUser.save();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4><span id="2-helprequests">2. HelpRequests</span></h4>
+<p>So the helpRequest can only be accessed by users will healthcare workers or doctor’s role. The doctors will make helpRequest and send it to the server. Once we have the data of the request, we will save all of them in their respective fields in the Mongoose Scheme and save to the Database</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">"/"</span>, (req, res) =&gt; &#123;</span><br><span class="line">  HelpRequest.find(<span class="function">(<span class="params">err, help</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      res.json(help);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">router.post(<span class="string">"/"</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> data = req.body;</span><br><span class="line">  <span class="keyword">const</span> newData = <span class="built_in">Object</span>.keys(data[<span class="number">0</span>]).filter(<span class="function">(<span class="params">key</span>) =&gt;</span> data[<span class="number">0</span>][key] == <span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">const</span> helpRequest = <span class="keyword">new</span> HelpRequest(&#123;</span><br><span class="line">    medicalSupplies: data[<span class="number">0</span>].medicalSupplies,</span><br><span class="line">    masks: data[<span class="number">0</span>].masks,</span><br><span class="line">    ...</span><br><span class="line">  &#125;);</span><br><span class="line">  helpRequest.save();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4><span id="3-volunteer">3. Volunteer</span></h4>
+<p>The volunteer is a little bit more complex. There are 2 types of volunteers: volunteers without helping a specific doctor and with helping a specific doctor. For type 1, we can just filled out a form and send it to the server and the information will be saved to the database. However, for type 2, we will need the id of the doctor whose the volunteer is helping, and then push that to the server.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">"/"</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.body);</span><br><span class="line">  VolunteerRequest.find(<span class="function">(<span class="params">err, help</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      res.json(help);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">router.post(<span class="string">"/"</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> data = req.body;</span><br><span class="line">  <span class="keyword">const</span> newData = <span class="built_in">Object</span>.keys(data[<span class="number">0</span>]).filter(<span class="function">(<span class="params">key</span>)=&gt;</span> data[<span class="number">0</span>][key] == <span class="literal">true</span>)</span><br><span class="line">  <span class="keyword">const</span> volunteerRequest = <span class="keyword">new</span> VolunteerRequest(&#123;</span><br><span class="line">    meals: data[<span class="number">0</span>].meals,</span><br><span class="line">    drinks: data[<span class="number">0</span>].drinks,</span><br><span class="line">    idDoctor: data[<span class="number">1</span>].idDoctor,</span><br><span class="line">    ...</span><br><span class="line">  &#125;);</span><br><span class="line">  volunteerRequest.save();</span><br></pre></td></tr></table></figure>
+<p>This is the end of this post, I hope you enjoy it and learn something new from the post. I would like to thank all my team members Hoang Lam, Tuan Hoang, Hoang Minh and Hong Minh for creating this website together. If you want to check out the website, here is the <a href="https://doctorally-test.herokuapp.com/" target="_blank" rel="noopener">link</a>. In the next post, we will see how to deploy a project with a server using heroku.</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/Heroku/" data-toggle="tooltip" data-placement="top" title="Post#5 Nodejs, Reactjs Heroku Deployment">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/Scholarship/" data-toggle="tooltip" data-placement="top" title="Post#3 How I got a full scholarship at Rice Engineering Computer Science">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+
+                
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">It has been a long time since I last wrote on my blog. So I want to add some usefel posts in my break time</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">FRONTEND</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">1. Material UI Framework</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">2. React-router-dom and react-router</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">3. React hooks: useContext, useEffect, useHistory, useParams</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">3.1 useContext</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">3.2 useEffect</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">3.3 useHistory, useParams</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">4. Authentication</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">5. Custom authentication hook.</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">6. API calling from Mapbox, Openstreetmap and custom API.</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">BACKEND</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.8.1.</span> <span class="toc-nav-text">1. Authentication</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.8.2.</span> <span class="toc-nav-text">2. HelpRequests</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.8.3.</span> <span class="toc-nav-text">3. Volunteer</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                        
+                          <a class="tag" href="/tags/#reactjs" title="reactjs">reactjs</a>
+                        
+                          <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
+                        
+                          <a class="tag" href="/tags/#api" title="api">api</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+        //   icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://instagram.com/quang.sot.1412">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/quang.sot.1412">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Quang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Quang Nguyen 2021 
+                    <br>
+                    Created by <a href="https://www.facebook.com/quang.sot.1412">Quang</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    from <a href="https://github.com/">MrSnoo</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=QUANG&repo=CodeBlog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://decodecraft.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<img src="https://decodecraft.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

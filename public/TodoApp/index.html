@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Post#6 CRUD Todo App with Firebase - Quang
+        
+    </title>
+
+    <link rel="canonical" href="https://decodecraft.com/TodoApp/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<body ontouchstart="">
+	<!-- Created by Nguyen Nhat Quang -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('firebase.png')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/undefined');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#reactjs" title="reactjs">reactjs</a>
+                            
+                              <a class="tag" href="/tags/#firebase" title="firebase">firebase</a>
+                            
+                        </div>
+                        <h1>Post#6 CRUD Todo App with Firebase</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by Quang Nguyen on
+                            2020-12-01
+                        </span>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Quang Nguyen</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2><span id="welcome-to-my-next-blog-everyone-must-know-about-todo-app-right-here-in-this-blog-i-will-show-you-how-to-create-a-todo-with-firebase-firestore-and-reactjs-and-use-firebase-hosting-to-deploy-it">Welcome to my next blog !! Everyone must know about Todo App right? Here in this blog, I will show you how to create a Todo with Firebase Firestore and Reactjs and use Firebase Hosting to deploy it.</span></h2>
+<h3><span id="1-why-do-we-use-firebase">1. Why do we use Firebase?</span></h3>
+<p>Firebase is a extremely powerful platform that helps you perform realtime updates to database, along with many other cool features. It also acts as a database and storage for you to handle. The set up is really easy.</p>
+<h3><span id="2-setting-up-firebase-in-reactjs">2. Setting up Firebase in Reactjs</span></h3>
+<h4><span id="21-create-a-project-on-firebase">2.1 Create a Project on Firebase</span></h4>
+<p>If you dont have an account, register one on firebase (you can use your Google account).</p>
+<p>Once you have an account, go to <a href="https://console.firebase.google.com" target="_blank" rel="noopener">Console</a> and add a new project like the figure below.</p>
+<img src="/TodoApp/addproject.png">
+<p>We dont need Google Analytics so remember to turn that off -&gt; Choose Web Application when asked adding Firebase to your app.</p>
+<img src="/TodoApp/web.png">
+<p>Here we get to the add Firebase SDK step. We need to set up this value in our project so remember to save it.</p>
+<p>Finish the set up, and now go to Cloud Firestore tab and create a new database. Here, your set up on the Firebase Console should be completed</p>
+<h4><span id="22-set-up-firebase-and-firestore-in-react-app">2.2 Set up Firebase and Firestore in React App</span></h4>
+<p>Create a simple Reactjs App by running the following code</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br><span class="line">cd my-app</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<p>Install firebase dependencies</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i firebase</span><br></pre></td></tr></table></figure>
+<p>After deleting all the unnecessary rendered files, we should have a simple React app set up. Now in the /src folder, create a service folder and inside it create a firebase.js file. This will be the file that contains all of our Firebase SDK set up that we just save</p>
+<p>Inside the this firebase.js folder, we will set the variables up like this</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> firebase <span class="keyword">from</span> <span class="string">"firebase/app"</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"firebase/auth"</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'firebase/firestore'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = firebase.initializeApp(&#123;</span><br><span class="line">  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,</span><br><span class="line">  authDomain: process.env.REACT_APP_AUTH_DOMAIN,</span><br><span class="line">  databaseURL: process.env.REACT_APP_DATABASE_URL,</span><br><span class="line">  projectId: process.env.REACT_APP_PROJECT_ID,</span><br><span class="line">  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,</span><br><span class="line">  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,</span><br><span class="line">  appId: process.env.REACT_APP_APP_ID</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> auth = app.auth()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> db = app.firestore()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> app</span><br></pre></td></tr></table></figure>
+<p>This might seem a bit weird right. This is because we will save all of our variables such as apiKey, authDomain, … appId in a .env file. In this way, when we want to switch to another service or change any account variables we will just need to change it in the .env file. This is the .env file, it should be outside in the main folder.</p>
+<img src="/TodoApp/env.png">
+<p>So inside this firebase.js file, we want to export the variable db as</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> db = app.firestore()</span><br></pre></td></tr></table></figure>
+<p>so that we can use db as direct access to our database later. Now we have finished our set up of Firebase. Lets get into the code and create a simple Todo App.</p>
+<h3><span id="3-create-todo-app">3. Create Todo App</span></h3>
+<h4><span id="31-the-structure-of-the-a-todoapp">3.1 The structure of the a TodoApp</span></h4>
+<p>Here, I will briefly talk about how to structure a todoapp. Your main file should be App.js, you can create a smaller component and render it in App.js as well but here we will use App.js as a main file.</p>
+<ol>
+<li>First, we will have a simple form and a submit button that we will use to add new todos</li>
+<li>We will have a component call TodoList which will render out each small component Todo. In each small component Todo will be a current todo(the task that we have to do), an edit button (to perform update function), and a delete button(to perform delete function)</li>
+</ol>
+<h4><span id="32-create-form-to-add-new-todo">3.2 Create form to add new Todo</span></h4>
+<p>Here I just use a simple Form structure from <a href="https://react-bootstrap.github.io/components/forms/" target="_blank" rel="noopener">Bootstrap</a>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Form className=&#123;classes.form&#125; onSubmit=&#123;addTodo&#125;&gt;</span><br><span class="line">  &lt;Form.Group style=&#123;&#123;<span class="attr">marginBot</span>: <span class="number">10</span>&#125;&#125; id=<span class="string">"email"</span>&gt;</span><br><span class="line">    &lt;Form.Control type=<span class="string">"newitem"</span> required ref=&#123;itemRef&#125;/&gt;</span><br><span class="line">  &lt;<span class="regexp">/Form.Group&gt;</span></span><br><span class="line"><span class="regexp">  &lt;Button className=&#123;classes.button&#125; type="submit"&gt;Add Item&lt;/</span>Button&gt;</span><br><span class="line">&lt;<span class="regexp">/Form&gt;</span></span><br></pre></td></tr></table></figure>
+<p>In the Form.Control (this is where we will input our new todos), we will have a ref. This ref will keep track of the current value in a variable</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> itemRef = useRef()</span><br></pre></td></tr></table></figure>
+<p>Alright, now we will add the addTodo function that actually connects to the Firebase database. First, everytime we click the submit button, we need to avoid refreshing the browser so we need preventDefault method. Then we just call <strong>db.collection(collectionName).add()</strong> to add a new document to the database. Here we add a document that has a field “todo” and a value is <strong>itemRef.current.value</strong> (the current value of our form)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> addTodo = <span class="function">(<span class="params">e</span>) =&gt;</span>&#123;</span><br><span class="line">  e.preventDefault()</span><br><span class="line">  db.collection(<span class="string">"todos"</span>).add(&#123;</span><br><span class="line">    todo: itemRef.current.value,</span><br><span class="line">    timestamp: firebase.firestore.FieldValue.serverTimestamp()</span><br><span class="line">  &#125;)</span><br><span class="line">  itemRef.current.value = <span class="string">""</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4><span id="33-get-all-the-todos-in-the-database-and-render-them">3.3 Get all the todos in the database and render them</span></h4>
+<p>We want to automatically render all the todos that are currently in the database and render them out in the client. Here we will use useEffect hook to do this. This means that we will run useEffect whenever there is a change in the database, and it will automatically getback the data in the database.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [todolist, setTodoList] = useState([])</span><br><span class="line"><span class="keyword">const</span> [invalidate, setInvalidate] = useState(<span class="literal">true</span>)</span><br><span class="line"></span><br><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(invalidate)&#123;</span><br><span class="line">    db.collection(<span class="string">"todos"</span>).orderBy(<span class="string">"timestamp"</span>, <span class="string">"desc"</span>).onSnapshot(<span class="function">(<span class="params">snapshot</span>)=&gt;</span>&#123;</span><br><span class="line">        setTodoList(snapshot.docs.map(<span class="function">(<span class="params">doc</span>) =&gt;</span> (&#123;<span class="attr">id</span>: doc.id, <span class="attr">todo</span>: doc.data().todo&#125;)))</span><br><span class="line">        setInvalidate(<span class="literal">false</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;, [invalidate]);</span><br></pre></td></tr></table></figure>
+<p>We keep track of 2 states, 1 is the invalidate(this is the cleanup method we will use for your useEffect, it just means that the useEffect wont be looping over and over again) and 2 is todolist(here we will store all the data we get from the server to an array)</p>
+<p>We use <strong>db.collection(“todos”).orderBy(“timestamp”, “desc”).onSnapshot</strong>, this will order the documents in the database from newest to oldest based on the time they are created, which makes sense because we want the newest task to be on the top. <strong>onSnapShot</strong> will listen to any changes in the database and get us back our data. So after getting the data from the database, we can now store the data in the todoList state and render them out like in the below code</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;todolist &amp;&amp; todolist.map(<span class="function">(<span class="params">todo</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;Todo id=&#123;todo.id&#125; removeTodo=&#123;removeTodo&#125; text=&#123;todo.todo&#125;/&gt;</span><br><span class="line">&#125;)&#125;</span><br></pre></td></tr></table></figure>
+<h4><span id="33-delete-and-update-function-in-each-todo-component">3.3 Delete and Update function in each Todo Component</span></h4>
+<p>In the code above, if you notice, we have create a component for each todo items called Todo. In this components, we will pass down some props like <strong>id</strong>(to keep track of what todo items this is in the database), <strong>removeTodo</strong>(removeTodo function) and <strong>text</strong>(the actual task that we want to do)</p>
+<p>The remove function is really simple because Firebase Firestore have provided a method to do that, all you need is the id of the document you are trying to delete.<br>
+And since when we get the data from the database, we have store a value <strong>id</strong> = <strong><a href="http://doc.id" target="_blank" rel="noopener">doc.id</a></strong> so this id value will be the unique id of each Todo item. And we can just do this.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> removeTodo = <span class="function">(<span class="params">id</span>) =&gt;</span>&#123;</span><br><span class="line">  db.collection(<span class="string">"todos"</span>).doc(id).delete()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Lastly is the update function. We will write this function inside the Todo component. Here we will use an <strong>input</strong> state to keep track of the current text we are entering in. And then we just need to call the Firebase Firestore update method and update the new task for the field todo in the document with the <strong>id</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [input, setInput] = useState(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> updateTodo = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">  db.collection(<span class="string">"todos"</span>).doc(id).update(&#123;</span><br><span class="line">    todo: input</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Make sure that because we pass the id down to this component Todo so we need to deconstruct the props to get the value</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;text, removeTodo, id&#125; = props</span><br></pre></td></tr></table></figure>
+<p>Here, in the Todo Component, I use a Modal from the Material UI framework so if you want to use this you can install material UI but if you dont use it, it is fine. Basically, if you click on the Edit button on each Todo item, a modal will be opened and you can type in the new task you want to replace and once you click Update Todo in the modal, it will execute the <strong>updateTodo</strong> function and update the value</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;&gt;</span><br><span class="line">&lt;Modal</span><br><span class="line">  open=&#123;open&#125;</span><br><span class="line">  onClose=&#123;() =&gt; setOpen(<span class="literal">false</span>)&#125;</span><br><span class="line">&gt;</span><br><span class="line">  &lt;div className=&#123;classes.paper&#125;&gt;</span><br><span class="line">    &lt;input value=&#123;input&#125; onChange=&#123;(e) =&gt; setInput(e.target.value)&#125;/&gt;</span><br><span class="line">    &#123;<span class="comment">/* &lt;Button className=&#123;classes.button&#125; onClick=&#123;() =&gt; setOpen(true)&#125;&gt;Update todo&lt;/Button&gt; */</span>&#125;</span><br><span class="line">    &lt;Button onClick=&#123;updateTodo&#125;&gt;Update Todo&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/Modal&gt;</span></span><br><span class="line"><span class="regexp">&lt;div style=&#123;&#123;display:"flex", flexDirection:"row", width:"75%"&#125;&#125;&gt;</span></span><br><span class="line"><span class="regexp">  &lt;li style=&#123;&#123;marginBottom: 20&#125;&#125;&gt;&#123;text&#125;&lt;/</span>li&gt;</span><br><span class="line">  &lt;Button className=&#123;classes.button&#125; onClick=&#123;() =&gt; setOpen(<span class="literal">true</span>)&#125;&gt;Edit&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;Button className=&#123;classes.button&#125; onClick=&#123;() =&gt; removeTodo(id)&#125;&gt;Delete&lt;/</span>Button&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>Here is the image of the complete product. It is really ugly but still functionality acceptable haha.</p>
+<img src="/TodoApp/todo.png">
+<h3><span id="4-deploy-using-firebase-hosting">4. Deploy using Firebase Hosting</span></h3>
+<p>This is really simple, here is the exact steps that you should follow.</p>
+<ol>
+<li>Open the command line in your project and run firebase init</li>
+<li>It will ask for certain questions.</li>
+<li>Choose use an existing project</li>
+<li>Choose convert all into a single html page</li>
+<li>Write everything in <strong>build</strong> folder (this is extremely important). When it asks for (project) make sure to write “build”</li>
+<li>You can choose whether to link to github or not.</li>
+<li>Run npm run build</li>
+<li>firebase deploy</li>
+</ol>
+<p>Here is the <a href="https://todoapp-aaff8.web.app/todolist" target="_blank" rel="noopener">Link</a> to the Todo Application. I hope you can take a look and learn some new things.</p>
+<h3><span id="thats-is-the-end-of-the-tutorial-i-hope-you-learn-something-new-about-using-firebase-and-react-hope-to-see-you-in-the-next-post">Thats is the end of the tutorial I hope you learn something new about using Firebase and React. Hope to see you in the next post</span></h3>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/MessengerClone/" data-toggle="tooltip" data-placement="top" title="Post#7 Messenger Clone - Realtime Messaging Platform with Firebase">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/Heroku/" data-toggle="tooltip" data-placement="top" title="Post#5 Nodejs, Reactjs Heroku Deployment">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+
+                
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Welcome to my next blog !! Everyone must know about Todo App right? Here in this blog, I will show you how to create a Todo with Firebase Firestore and Reactjs and use Firebase Hosting to deploy it.</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. Why do we use Firebase?</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. Setting up Firebase in Reactjs</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">2.1 Create a Project on Firebase</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2.2 Set up Firebase and Firestore in React App</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. Create Todo App</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">3.1 The structure of the a TodoApp</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">3.2 Create form to add new Todo</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">3.3 Get all the todos in the database and render them</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">3.3 Delete and Update function in each Todo Component</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. Deploy using Firebase Hosting</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">Thats is the end of the tutorial I hope you learn something new about using Firebase and React. Hope to see you in the next post</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#reactjs" title="reactjs">reactjs</a>
+                        
+                          <a class="tag" href="/tags/#firebase" title="firebase">firebase</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+        //   icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://instagram.com/quang.sot.1412">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/quang.sot.1412">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Quang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Quang Nguyen 2021 
+                    <br>
+                    Created by <a href="https://www.facebook.com/quang.sot.1412">Quang</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    from <a href="https://github.com/">MrSnoo</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=QUANG&repo=CodeBlog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://decodecraft.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<img src="https://decodecraft.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

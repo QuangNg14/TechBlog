@@ -5,7 +5,7 @@
 # Site
 title: Quang Nguyen
 subtitle: A few coding thoughts and experience
-author: Nhat Quang
+author: Quang Nguyen
 language:
 timezone:
 
@@ -61,7 +61,7 @@ ga_domain: yoursite
 
 # Sidebar settings
 sidebar: true                       # whether or not using Sidebar.
-sidebar-about-description: "Hi, my name is Quang and I love developing softwares. Check out all the cool projects I did here http://decodecraft.com/MyProject/"
+sidebar-about-description: "Hi, my name is Quang Nguyen and I love developing softwares. Check out all the cool projects I did here http://decodecraft.com/MyProject/"
 sidebar-avatar: img/main_photo.JPG      # use absolute URL, seeing it's used in both `/` and `/about/`
 widgets:
 - featured-tags

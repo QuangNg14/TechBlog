@@ -1,7 +1,7 @@
 ---
 title: My Projects
 catalog: true
-date: 2021-22-06 19:21:45
+date: 2021-06-21 19:21:45
 subtitle: 15 min read
 header-img: "software_shutterstock_1290773869.jpg"
 tags: [all projects, reactjs, javascript, python, php]

@@ -119,12 +119,11 @@ My name is Quang Nguyen. I am currently a sophomore majoring Computer Science in
 
 {% asset_img frame7.png %}
 
-<!-- ## 11. Birthday Gift for my girlfriend
+## 11. Birthday Gift for my girlfriend
 
 - **When**: Feb 9, 2020
-- **Where**: My girlfriend Minh Anh 18th birthday
-- **What is this project**: I wanted to give something special to my girlfriend to express my love. She loved this website.
+- **What is this project**: I created a special website for my girlfriend on her birthday. I used React, Ant-design stylable components and Tailwind CSS to build the website. I also created a lot of cool animations.s
 
-{% asset_img minhanh.png %} -->
+{% asset_img minhanh.png %}
 
 This is the end, for now. I will updating new things. I hoped you understand some projects that I did and find it interesting.

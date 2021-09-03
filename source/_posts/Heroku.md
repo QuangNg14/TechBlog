@@ -2,7 +2,7 @@
 title: Nodejs, Reactjs Heroku Deployment
 catalog: true
 date: 2020-10-18 11:41:25
-subtitle: 10-min read
+subtitle:
 header-img: "flask2.jpg"
 tags: [heroku, nodejs, reactjs, mongodb]
 readtime:

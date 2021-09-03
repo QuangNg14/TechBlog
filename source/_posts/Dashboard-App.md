@@ -2,7 +2,7 @@
 title: Create and upload a mobile application to App Store and Google Play Store
 catalog: true
 date: 2021-06-20 08:53:06
-subtitle: 30-min read
+subtitle:
 header-img: "header2.jpg"
 tags: [javascript, react-native, nodejs, api, expo]
 readtime: 30-min read

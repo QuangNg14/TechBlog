@@ -2,7 +2,7 @@
 title: How I started coding ...
 catalog: true
 date: 2020-03-26 22:19:19
-subtitle: 4 min read
+subtitle:
 header-img: "demo.jpg"
 tags: intro
 ---

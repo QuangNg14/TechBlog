@@ -2,7 +2,7 @@
 title: How I got a scholarship at Rice Engineering Computer Science
 catalog: true
 date: 2020-04-09 00:57:37
-subtitle: 20 min read
+subtitle:
 header-img: test1.jpg
 tags: [scholarships, CS]
 readtime:

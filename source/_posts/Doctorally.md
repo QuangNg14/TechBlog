@@ -2,7 +2,7 @@
 title: Creating Doctorally - Online Supporting Platform
 catalog: true
 date: 2020-10-18 08:53:06
-subtitle: 20-min read
+subtitle:
 header-img: "Hospital.png"
 tags: [javascript, reactjs, nodejs, api]
 readtime: 20-min read

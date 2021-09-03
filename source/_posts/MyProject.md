@@ -53,18 +53,6 @@ My name is Quang Nguyen. I am currently a sophomore majoring Computer Science in
 
 {% asset_img messenger.png %}
 
-## Link - Rice Datathon
-
-- **When**: Feb 2021
-- **Where**: 3rd Rice Datathon 2021.
-- **Additional Information**: check out this [Post](https://devpost.com/software/link-ot1d9k?ref_content=contribution-prompt&ref_feature=engagement&ref_medium=email&utm_campaign=contribution-prompt&utm_content=contribution_reminder&utm_medium=email&utm_source=transactional#app-team)
-- **Teammates**: Marc Shen, Christine Lee, Thomas Yeum
-- **What is this project**: Given the wealth of transaction data provided by Bill.com, we sought to identify vendor-to-vendor, agency-to-agency, and agency-to-vendor relationships that could be used to identify similar agencies and vendors. Specifically, our goal was to identify a quantitative method of measuring similarity among vendors and agencies in order to make custom-tailored recommendations.
-
-{% asset_img link.png %}
-
-- **Where is it**: We eventually won **First** Place in the Bill.com Track and received really cool prizes from the company. You guys can check out the [Github]("https://github.com/QuangNg14/Datathon")
-
 ## NextStep - Rice Apps - realtime SMS-bot
 
 - **When**: Aug 2020 - Mar 2021
@@ -119,7 +107,7 @@ My name is Quang Nguyen. I am currently a sophomore majoring Computer Science in
 
 {% asset_img frame7.png %}
 
-## 11. Birthday Gift for my girlfriend
+## Birthday Gift for my girlfriend
 
 - **When**: Feb 9, 2020
 - **What is this project**: I created a special website for my girlfriend on her birthday. I used React, Ant-design stylable components and Tailwind CSS to build the website. I also created a lot of cool animations.s

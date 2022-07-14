@@ -1,21 +1,31 @@
 ---
 title: Quang Nguyen's Portfolio
 catalog: true
-date: 2021-08-17 19:21:45
+date: 2022-07-13 19:21:45
 header-img: "Webp.net-resizeimage-2.png"
 tags:
 readtime:
 ---
 
-My name is Quang Nguyen. I am currently a sophomore majoring Computer Science in Rice University. I have experiences in fullstack developement in both web and mobile. I developed software and applications in a variety of fields from medical and health to stock market data. Welcome to my portfolio !
+My name is Quang Nguyen. I am currently a rising junior majoring Computer Science in Rice University. I have just finished my SWE summer internship at Meta in the Menlo Park office. I have experiences in fullstack developement in both web and mobile. I developed software and applications in a variety of fields from medical and health to stock market data. Welcome to my portfolio !
+
+## Stars on Reels - Facebook Reels
+
+- **When**: May 2022 - Jul 2022
+- **Where**: You guys can check out this new feature by opening any Facebook Reels on the Web!
+- **What is this project**: This is my intern project at Meta this summer. I created unified interface buttons and real-time transaction for Stars (creator's appreciation) in Facebook Reels. I have just launched this feature and hopefully you guys can experience this amazing new features!
+
+{% asset_img stars_image_1.png %}
+{% asset_img stars_image_2.png %}
+{% asset_img stars_image_3.png %}
 
 ## Hatch - Rice University Course Planner
 
-- **When**: May 2021 - Present
-- **Where**: You guys can check out this product for Rice Apps [here](http://hatch.riceapps.org/schedule). I also wrote a post about this experience remember to check it out.
-- **What is this project**: Hatch is a course scheduler for Rice University and it has been used for over 2 years by the students. However, we want to take a step further and improve Hatch. Thus, we added Degree Planner which allow students to schedule their 4 year degree plan with ease. We plan to launch this soon
+- **When**: Apr 2021 - Present
+- **Where**: You guys can check out this product for Rice Apps (if you are Rice students) [here](http://hatch.riceapps.org/schedule). I also wrote a post about this experience remember to check it out.
+- **What is this project**: Hatch is a course scheduler for Rice University and it has been used for over 2 years by the students. However, we want to take a step further and improve Hatch. Thus, we added Degree Planner which allow students to schedule their 4 year degree plan with ease. Also, we added course evaluations which help students to quickly see the evaluation for a course.
 
-{% asset_img hatch.png %}
+{% asset_img hatch_new_image.png %}
 
 ## Dashboard: Track your training - Mobile Application
 
